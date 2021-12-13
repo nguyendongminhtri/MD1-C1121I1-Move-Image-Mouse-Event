@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.kieu_anh {*/
+        /*    position: relative;*/
+        /*    left: 200px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<img id="kieu_anh" src="image/47378529_536486050149275_8974060236272828416_n.jpg" height="200" width="200"/><br>
+<button onclick="moveImage()">Move Left</button>
+<button onclick="moveBack()">Move Right</button>
+<button onclick="moveUp()">Move Up</button>
+<button onclick="moveDown()">Move Right</button>
+<button onclick="moveCheo()">Move Cheo</button>
+<script>
+    let kieu_anh;
+
+    function init() {
+        kieu_anh = document.getElementById('kieu_anh');
+        kieu_anh.style.position = 'relative';
+        kieu_anh.style.left = '0px';
+        kieu_anh.style.top = '0px';
+    }
+
+    window.onload = init;
+
+    function moveImage() {
+        kieu_anh.style.left = parseInt(kieu_anh.style.left) + 10 + 'px';
+        console.log('left === ', kieu_anh.style.left)
+    }
+    function moveBack(){
+        kieu_anh.style.left = parseInt(kieu_anh.style.left) - 10 + 'px';
+        console.log('right === ', kieu_anh.style.left)
+    }
+    function moveUp(){
+        kieu_anh.style.top = parseInt(kieu_anh.style.top) - 10 + 'px';
+    }
+    function moveDown(){
+        kieu_anh.style.top = parseInt(kieu_anh.style.top) + 10 + 'px';
+    }
+    function moveCheo(){
+        kieu_anh.style.left = parseInt(kieu_anh.style.left) + 50 + 'px';
+        kieu_anh.style.top = parseInt(kieu_anh.style.top) + 50 + 'px';
+    }
+</script>
+</body>
+</html>
